@@ -1,0 +1,62 @@
+:root {
+    --main-spacing: 20px;
+    --1x: 10px;
+    --key-color: rgb(39, 126, 106);
+    --text-color: rgb(2, 26, 21);
+    --type-text-color: rgb(156, 98, 37);
+    --type-number-color: rgb(59, 110, 168);
+    --type-date-color: rgb(8, 90, 197);
+    --font-family: arial;
+    --font-size: 18px;
+}
+
+.container {
+    padding: var(--main-spacing);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    .container {
+        margin-left: var(--main-spacing);
+        padding: 0;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 var(--main-spacing);
+    }
+    .row {
+        display: flex;
+    }
+    .key {
+        color: var(--key-color);
+    }
+    .value {
+        color: var(--text-color);
+    }
+    .separator {
+        margin-right: var(--1x);
+    }
+    .marker {
+        color: var(--text-color);
+    }
+    .date {
+        color: var(--type-date-color);
+        &::before {
+            content: '"';
+        }
+        &::after {
+            content: '"';
+        }
+    }
+    .text {
+        color: var(--type-text-color);
+        &::before {
+            content: '"';
+        }
+        &::after {
+            content: '"';
+        }
+    }
+    .number {
+        color: var(--type-number-color);
+    }
+}

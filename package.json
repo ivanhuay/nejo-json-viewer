@@ -1,10 +1,12 @@
 {
-  "name": "json-viewer",
+  "name": "nejo-json-viewer",
   "version": "1.0.0",
-  "description": "React Json Viewer",
+  "description": "Nejo Json Viewer",
   "main": "dist/JSONViewer.js",
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [
     "react",
@@ -17,6 +19,16 @@
     "@babel/cli": "^7.25.6",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-a11y": "^8.3.4",
+    "@storybook/addon-essentials": "^8.3.4",
+    "@storybook/addon-interactions": "^8.3.4",
+    "@storybook/addon-links": "^8.3.4",
+    "@storybook/addon-onboarding": "^8.3.4",
+    "@storybook/blocks": "^8.3.4",
+    "@storybook/react": "^8.3.4",
+    "@storybook/react-vite": "^8.3.4",
+    "@storybook/test": "^8.3.4",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
@@ -24,9 +36,12 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-storybook": "^0.9.0",
     "prettier": "^3.3.3",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "storybook": "^8.3.4"
   },
   "dependencies": {
     "sass": "^1.79.4"
