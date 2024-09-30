@@ -54,7 +54,7 @@ You can easily customize the appearance of Nejo JSON Viewer by passing a `classN
 
 ```scss
 // custom-styles.scss
-.custom-nejo {
+.custom {
   --main-spacing: 20px;
   --1x: 10px;
   --key-color: rgb(192, 113, 40);
@@ -72,12 +72,11 @@ Then, in your React component:
 ```javascript
 import React from 'react';
 import Nejo from 'nejo-json-viewer';
-import './custom-styles.scss';
 
 const MyComponent = () => {
   const data = { /* ... */ };
 
-  return <Nejo jsonData={data} className="custom-nejo" />;
+  return <Nejo jsonData={data} className={styles.custom} />;
 };
 ```
 

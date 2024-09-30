@@ -2,9 +2,8 @@
   "name": "nejo-json-viewer",
   "version": "1.0.0",
   "description": "Nejo Json Viewer",
-  "main": "dist/nejo.js",
+  "main": "src/nejo.jsx",
   "scripts": {
-    "build": "babel src --out-dir dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

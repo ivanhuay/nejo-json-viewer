@@ -1,4 +1,5 @@
-:root {
+.container {
+    /* variables to override */
     --main-spacing: 20px;
     --1x: 10px;
     --key-color: rgb(39, 126, 106);
@@ -8,9 +9,7 @@
     --type-date-color: rgb(8, 90, 197);
     --font-family: arial;
     --font-size: 18px;
-}
 
-.container {
     padding: var(--main-spacing);
     font-family: var(--font-family);
     font-size: var(--font-size);
