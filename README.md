@@ -87,6 +87,12 @@ const MyComponent = () => {
 | `jsonData` | Object | The JSON object to be rendered (required) |
 | `className` | String | Custom CSS class name for styling |
 
+## Demo
+
+Check out the live Storybook demo to see Nejo JSON Viewer in action:
+
+[Storybook Demo](https://ivanhuay.github.io/nejo-json-viewer/)
+
 ## Development
 
 To run the Storybook for this component locally:
