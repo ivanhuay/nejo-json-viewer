@@ -12,6 +12,9 @@ const Nejo = ({ jsonData, className }) => {
         if(typeof value === 'number') {
             return <div className={styles.number}>{value}</div>
         }
+        if(typeof value === 'boolean') {
+            return <div className={styles.number}>{value.toString()}</div>
+        }
         if(value instanceof Date && !isNaN(value.valueOf())) {
             return <div className={styles.date}>{value.toISOString()}</div>
         }
