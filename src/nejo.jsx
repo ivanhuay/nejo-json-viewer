@@ -29,7 +29,7 @@ const Nejo = ({ jsonData, className }) => {
                 <div className={styles.marker}>[</div>
                 {jsonData.map((elmData, i) => (
                     <div key={i} className={styles.arrayElm}>
-                        <Nejo jsonData={elmData} /> {','}
+                        <Nejo jsonData={elmData} /> {i < jsonData.length - 1 ? ',' : ''}
                     </div>
                 ))}
                 <div className={styles.marker}>]</div>
@@ -38,16 +38,20 @@ const Nejo = ({ jsonData, className }) => {
     } else if (typeof jsonData !== 'object') {
         return <TypeRender value={jsonData} />;
     }
+
+    const keys = Object.keys(jsonData);
+
     return (
         <div className={[styles.container, className].join(' ')}>
             <div className={styles.marker}>&#123;</div>
             <div className={styles.content}>
-                {Object.keys(jsonData).map((elmKey) => (
+                {keys.map((elmKey, i) => (
                     <div key={elmKey} className={styles.row}>
                         <div className={styles.key}>{elmKey}</div>
                         <div className={styles.separator}>:</div>
                         <div className={styles.value}>
                             <TypeRender value={jsonData[elmKey]} />
+                            {i < keys.length - 1 ? ',' : ''}
                         </div>
                     </div>
                 ))}

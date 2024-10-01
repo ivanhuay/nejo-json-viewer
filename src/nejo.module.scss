@@ -30,6 +30,7 @@
     }
     .value {
         color: var(--text-color);
+        display: flex;
     }
     .separator {
         margin-right: var(--1x);
