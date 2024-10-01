@@ -5,24 +5,24 @@ import styles from './nejo.module.scss';
 const Nejo = ({ jsonData, className }) => {
     const isArray = Array.isArray(jsonData);
 
-    const TypeRender = ({value}) => {
-        if(typeof value === 'string') {
-            return <div className={styles.text}>{value}</div>
+    const TypeRender = ({ value }) => {
+        if (typeof value === 'string') {
+            return <div className={styles.text}>{value}</div>;
         }
-        if(typeof value === 'number') {
-            return <div className={styles.number}>{value}</div>
+        if (typeof value === 'number') {
+            return <div className={styles.number}>{value}</div>;
         }
-        if(typeof value === 'boolean') {
-            return <div className={styles.number}>{value.toString()}</div>
+        if (typeof value === 'boolean') {
+            return <div className={styles.number}>{value.toString()}</div>;
         }
-        if(value instanceof Date && !isNaN(value.valueOf())) {
-            return <div className={styles.date}>{value.toISOString()}</div>
+        if (value instanceof Date && !isNaN(value.valueOf())) {
+            return <div className={styles.date}>{value.toISOString()}</div>;
         }
-        if(typeof value === 'object') {
-            return <Nejo jsonData={value} />
+        if (typeof value === 'object') {
+            return <Nejo jsonData={value} />;
         }
-        return <div className={styles.defaultType}>{value}</div>
-    }
+        return <div className={styles.defaultType}>{value}</div>;
+    };
     if (isArray) {
         return (
             <div className={styles.container}>
@@ -42,7 +42,9 @@ const Nejo = ({ jsonData, className }) => {
                     <div key={elmKey} className={styles.row}>
                         <div className={styles.key}>{elmKey}</div>
                         <div className={styles.separator}>:</div>
-                        <div className={styles.value}><TypeRender value={jsonData[elmKey]}/></div>
+                        <div className={styles.value}>
+                            <TypeRender value={jsonData[elmKey]} />
+                        </div>
                     </div>
                 ))}
             </div>

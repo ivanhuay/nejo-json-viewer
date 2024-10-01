@@ -93,6 +93,61 @@ Check out the live Storybook demo to see Nejo JSON Viewer in action:
 
 [Storybook Demo](https://ivanhuay.github.io/nejo-json-viewer/)
 
+## Using with Next.js
+
+To use this module in a Next.js application, you need to configure Next.js to properly transpile the package. Follow these steps:
+
+1. Install the package:
+   ```
+   npm install --save nejo-json-viewer
+   ```
+
+2. Create or update your `next.config.js` file in the root of your Next.js project with the following configuration:
+
+   ```javascript
+   const path = require('path');
+
+   module.exports = {
+     webpack: (config, { defaultLoaders }) => {
+       config.module.rules.push({
+         test: /\.jsx?$/,
+         include: [path.resolve(__dirname, 'node_modules/nejo-json-viewer')],
+         use: [defaultLoaders.babel],
+       });
+
+       return config;
+     },
+     transpilePackages: ['nejo-json-viewer'],
+   };
+   ```
+
+   This configuration does two things:
+   - It tells webpack to use Babel to transpile the `nejo-json-viewer` package.
+   - It adds `nejo-json-viewer` to the list of packages that Next.js should transpile.
+
+3. You can now import and use the component in your Next.js pages or components:
+
+   ```jsx
+   import NejoJsonViewer from 'nejo-json-viewer';
+
+   export default function MyPage() {
+     const data = { key: "value", nested: { array: [1, 2, 3] } };
+     return <NejoJsonViewer data={data} />;
+   }
+   ```
+
+Note: If you're using TypeScript, you might need to add type declarations for the package. Create a `nejo-json-viewer.d.ts` file in your project's `@types` directory:
+
+```typescript
+declare module 'nejo-json-viewer' {
+  import { ComponentType } from 'react';
+  
+  export const NejoJsonViewer: ComponentType<{ data: any }>;
+}
+```
+
+Remember to restart your Next.js development server after making these changes to ensure they take effect.
+
 ## Development
 
 To run the Storybook for this component locally:
