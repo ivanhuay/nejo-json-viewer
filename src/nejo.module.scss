@@ -46,6 +46,10 @@
             content: '"';
         }
     }
+    .arrayElm {
+        display: flex;
+        margin-left: var(--1x);
+    }
     .text {
         color: var(--type-text-color);
         &::before {

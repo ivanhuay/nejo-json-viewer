@@ -28,11 +28,15 @@ const Nejo = ({ jsonData, className }) => {
             <div className={styles.container}>
                 <div className={styles.marker}>[</div>
                 {jsonData.map((elmData, i) => (
-                    <Nejo key={i} jsonData={elmData} />
+                    <div key={i} className={styles.arrayElm}>
+                        <Nejo jsonData={elmData} /> {','}
+                    </div>
                 ))}
                 <div className={styles.marker}>]</div>
             </div>
         );
+    } else if (typeof jsonData !== 'object') {
+        return <TypeRender value={jsonData} />;
     }
     return (
         <div className={[styles.container, className].join(' ')}>
