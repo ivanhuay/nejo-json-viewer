@@ -32,6 +32,14 @@ const nestedData = {
     ],
 };
 
+const withLinksAndEmail = {
+    first_name: 'Ivan',
+    last_name: 'Huayraña',
+    powers: ['learning', 'create_bugs', 'fix_bugs'],
+    email: 'ivanhuay@gmail.com',
+    website: 'https://ivanhuay.ar',
+};
+
 const stringArray = {
     first_name: 'Ivan',
     last_name: 'Huayraña',
@@ -52,6 +60,12 @@ it('renders with nested data', () => {
 
 it('renders array string list', () => {
     const component = renderer.create(<Nejo jsonData={stringArray} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+it('renders array with link and email', () => {
+    const component = renderer.create(<Nejo jsonData={withLinksAndEmail} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });

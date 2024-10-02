@@ -36,6 +36,14 @@ const stringArray = {
     powers: ['learning', 'create_bugs', 'fix_bugs'],
 };
 
+const withLinksAndEmail = {
+    first_name: 'Ivan',
+    last_name: 'Huayraña',
+    powers: ['learning', 'create_bugs', 'fix_bugs'],
+    email: 'ivanhuay@gmail.com',
+    website: 'https://ivanhuay.ar',
+};
+
 export default {
     title: 'Nejo Json Viewer',
     component: Nejo,
@@ -75,5 +83,12 @@ export const StringArray = {
     args: {
         label: 'String Array',
         jsonData: stringArray,
+    },
+};
+
+export const WithLinkAndEmail = {
+    args: {
+        label: 'With Links And Email',
+        jsonData: withLinksAndEmail,
     },
 };

@@ -7,6 +7,20 @@ const Nejo = ({ jsonData, className }) => {
 
     const TypeRender = ({ value }) => {
         if (typeof value === 'string') {
+            if (/^(http|https)/.test(value)) {
+                return (
+                    <a href={value} className={styles.link}>
+                        {value}
+                    </a>
+                );
+            }
+            if (/\S+@\S+\.\S+/.test(value)) {
+                return (
+                    <a href={`mailto:${value}`} className={styles.link}>
+                        {value}
+                    </a>
+                );
+            }
             return <div className={styles.text}>{value}</div>;
         }
         if (typeof value === 'number') {

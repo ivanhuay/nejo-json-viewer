@@ -60,6 +60,15 @@
             content: '"';
         }
     }
+    .link {
+        color: var(---type-date-color);
+        &::before {
+            content: '"';
+        }
+        &::after {
+            content: '"';
+        }
+    }
     .number {
         color: var(--type-number-color);
     }
