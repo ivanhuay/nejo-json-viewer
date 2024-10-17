@@ -88,7 +88,7 @@ const Nejo = ({ jsonData, className, endingChar = '' }) => {
                         )}
                     </div>
                 ))}
-                <div className={styles.marker}>]</div>
+                <div className={styles.marker}>]{endingChar}</div>
             </div>
         );
     } else if (typeof jsonData !== 'object') {

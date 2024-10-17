@@ -28,6 +28,14 @@ const nestedData = {
             to: new Date('2019-03-30T09:00'),
         },
     ],
+    technical_stack: [
+        {
+            name: 'Node.js',
+        },
+        {
+            name: 'React',
+        },
+    ],
 };
 
 const stringArray = {
